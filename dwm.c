@@ -1755,8 +1755,9 @@ void updatesizehints(Client *c) {
 }
 
 void updatestatus(void) {
-	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-		strcpy(stext, "dwm-"VERSION);
+	/* uncomment to get text from xsetroot */
+	/*if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) */
+	strcpy(stext, "1dwm-");
 	drawbar(selmon);
 }
 
@@ -1766,6 +1767,7 @@ void updatetitle(Client *c) {
 	if (c->name[0] == '\0') /* hack to mark broken clients */
 		strcpy(c->name, broken);
 }
+
 
 void updatewindowtype(Client *c) {
 	Atom state = getatomprop(c, netatom[NetWMState]);
