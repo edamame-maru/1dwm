@@ -1757,6 +1757,7 @@ void updatesizehints(Client *c) {
 void updatestatus(void) {
 	/* uncomment to get text from xsetroot */
 	/*if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext))) */
+
 	strcpy(stext, "1dwm");
 	drawbar(selmon);
 }
