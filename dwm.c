@@ -1511,7 +1511,7 @@ void spawn(const Arg *arg) {
 		sigaction(SIGCHLD, &sa, NULL);
 
 		execvp(((char **)arg->v)[0], (char **)arg->v);
-		die("dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
+		die("1dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
 	}
 }
 
@@ -1864,7 +1864,7 @@ int xerrordummy(Display *dpy, XErrorEvent *ee) {
 /* Startup Error handler to check if another window manager
  * is already running. */
 int xerrorstart(Display *dpy, XErrorEvent *ee) {
-	die("dwm: another window manager is already running");
+	die("1dwm: another window manager is already running");
 	return -1;
 }
 
