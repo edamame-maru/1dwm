@@ -665,24 +665,19 @@ void drawbar(Monitor *m) {
 
 	if (!m->showbar)
 		return;
-
+	
 	/* draw status first so it can be overdrawn by tags later */
-	/* status is only drawn on selected monitor */
-	/* 2px right padding */
-	/*
 	if (m == selmon) { 
-		drw_setscheme(drw, scheme[SchemeNorm]);
-		tw = TEXTW(stext) - lrpad + 2; 
+		drw_setscheme(drw, scheme[SchemeNorm]); /* status is only drawn on selected monitor */
+		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
 		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
 	}
-	*/
 
-
-		for (c = m->clients; c; c = c->next) {
-			occ |= c->tags;
-			if (c->isurgent)
-				urg |= c->tags;
-		}
+	for (c = m->clients; c; c = c->next) {
+		occ |= c->tags;
+		if (c->isurgent)
+			urg |= c->tags;
+	}
 	x = 0;
 	for (i = 0; i < LENGTH(tags); i++) {
 		w = TEXTW(tags[i]);
@@ -699,6 +694,7 @@ void drawbar(Monitor *m) {
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - tw - x) > bh) {
+		/*
 		if (m->sel) {
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
@@ -708,6 +704,7 @@ void drawbar(Monitor *m) {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
 		}
+		*/
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
 }
