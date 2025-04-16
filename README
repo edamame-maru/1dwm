@@ -1,5 +1,5 @@
 1dwm
-============================
+------------
 1dwm is a fork of the brilliant dwm by suckless (https://dwm.suckless.org/). The
 fork focuses on raw speed when managing windows and tries its best to get out of your way.
 
@@ -21,4 +21,5 @@ If you use a display manager, select 1dwm at your login screen.
 To start with startx, add the following command to your ~/.xinitrc:
 
 	exec dwm1
+
 
