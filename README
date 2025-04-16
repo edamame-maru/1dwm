@@ -17,7 +17,8 @@ Run the following to build and install 1dwm:
 
 Starting 1dwm
 -----------
-Start 1dwm through your display manager.
+If you use a display manager, select 1dwm at your login screen.
 To start with startx, add the following command to your ~/.xinitrc:
+
 	exec dwm1
 
