@@ -25,6 +25,6 @@ install: all
 	chmod 755 ${DESTDIR}${PREFIX}/bin/1dwm
 
 uninstall:
-	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
+	rm -f ${DESTDIR}${PREFIX}/bin/1dwm\
 
 .PHONY: all clean install uninstall
